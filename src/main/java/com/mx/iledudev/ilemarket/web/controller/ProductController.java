@@ -2,10 +2,7 @@ package com.mx.iledudev.ilemarket.web.controller;
 
 import java.util.List;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,7 +29,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class ProductController {
     private final ProductService productService;
 
-    @ApiOperation("get all products enabled in market stock")
+
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "Authorization", value = "Access Token", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class, example = "Bearer access_token"),
+
+    })
     @ApiResponse(code=200 , message = "OK")
     @GetMapping(value="/get-all")
     public ResponseEntity<List<ProductDTO>> getAllProducts() {
