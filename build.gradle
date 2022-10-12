@@ -16,7 +16,7 @@ ext {
 
 group = 'com.mx.iledudev'
 version = '1.0.0'
-sourceCompatibility = '11'
+sourceCompatibility = '8'
 
 configurations {
 	compileOnly {
