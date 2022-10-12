@@ -34,8 +34,7 @@ public class ProductController {
 
     @ApiOperation("get all products enabled in market stock")
     @ApiResponse(code=200 , message = "OK")
-    @GetMapping(value="/get-all" , consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
-            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @GetMapping(value="/get-all")
     public ResponseEntity<List<ProductDTO>> getAllProducts() {
         List<ProductDTO> products = productService.getAll();
         if (products.isEmpty()) {
