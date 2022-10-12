@@ -1,0 +1,1 @@
+web: java -jar -Dspring.profiles.active=prod build/libs/ile-market-1.0.0.jar
